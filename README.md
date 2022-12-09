@@ -1,12 +1,12 @@
-# pizzR
+# pyzza
 
 > *Copyright 2022 [Michael Lechner]. Licensed under the MIT license.*
 
-`pizzR` is a small collection of R-Functions created by a Pizza-enthusiast. Although there is no specific topic, most of the functions have a background in forestry, raster data as well as tree species classification.
+`pyzza` is a small collection of Python-Functions created by a Pizza-enthusiast. Although there is no specific topic, most of the functions have a background in forestry, raster data as well as tree species classification.
 
 This package is a result of me constantly breaking the DRY principle by copy-and-pasting stuff from old projects into new ones and to have a centralized database to access the functions from several computing instances.
 
-The `pizzR`-package does not solve any large problem, but it can help to save time by eliminating repetitive code and provide easy access to some more complicated interfaces of different packages.
+The `pyzza`-package does not solve any large problem, but it can help to save time by eliminating repetitive code and provide easy access to some more complicated interfaces of different packages.
 
 This package is constantly being expanded and improved. Any ideas for new functions or bug reports will be appreciated.
 
