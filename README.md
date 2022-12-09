@@ -1,4 +1,4 @@
-# pyzza
+# pizzR
 
 > *Copyright 2022 [Michael Lechner]. Licensed under the MIT license.*
 
@@ -9,6 +9,7 @@ This package is a result of me constantly breaking the DRY principle by copy-and
 The `pizzR`-package does not solve any large problem, but it can help to save time by eliminating repetitive code and provide easy access to some more complicated interfaces of different packages.
 
 This package is constantly being expanded and improved. Any ideas for new functions or bug reports will be appreciated.
+
 
 
 
