@@ -2,7 +2,7 @@
 
 > *Copyright 2022 [Michael Lechner]. Licensed under the MIT license.*
 
-`pyzza` is a small collection of Python-Functions created by a Pizza-enthusiast. Although there is no specific topic, most of the functions have a background in forestry, raster data as well as tree species classification.
+`pyzza` is a small collection of Python-Functions created by a Pizza-enthusiast and with no specific topic.
 
 This package is a result of me constantly breaking the DRY principle by copy-and-pasting stuff from old projects into new ones and to have a centralized database to access the functions from several computing instances.
 
