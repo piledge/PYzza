@@ -1,6 +1,6 @@
 # pyzza
 
-> *Copyright 2022 [Michael Lechner]. Licensed under the MIT license.*
+> *Copyright 2022 [piledge]. Licensed under the MIT license.*
 
 `pyzza` is a small collection of Python-Functions created by a Pizza-enthusiast and with no specific topic.
 
