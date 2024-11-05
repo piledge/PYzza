@@ -15,9 +15,9 @@ requirements = read_requirements("requirements.txt")
 setup(
     name = 'pyzza',
     version = version,
-    author = 'pi-ledge',
+    author = 'piledge',
     author_email = '',
-    url = 'https://github.com/pi-ledge/pyzza/',
+    url = 'https://github.com/piledge/pyzza/',
     description = 'Small but useful collection of Python-Functions',
     long_description_content_type = "text/x-rst",
     long_description = long_description,
