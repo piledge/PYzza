@@ -1,1 +1,1 @@
-from .pYzza import *
+from .PYzza import *

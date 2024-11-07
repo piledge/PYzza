@@ -13,11 +13,11 @@ version = read_file("VERSION")
 requirements = read_requirements("requirements.txt")
 
 setup(
-    name = 'pYzza',
+    name = 'PYzza',
     version = version,
     author = 'piledge',
     author_email = '',
-    url = 'https://github.com/piledge/pYzza/',
+    url = 'https://github.com/piledge/PYzza/',
     description = 'Small but useful collection of Python-Functions',
     long_description_content_type = "Small but useful collection of Python-Functions",
     long_description = long_description,
