@@ -167,8 +167,7 @@ mt_hass_rsa
 .idea/
 *.zip
 *.rar
-test.py
-test_[0-9].py
+test*[_0-9].py
 *.build
 *.dist
 *onefile-build
