@@ -10,4 +10,4 @@ The PYzza-package does not solve any large problem, but it can help to save time
 This package is constantly being expanded and improved. Any ideas for new functions or bug reports will be appreciated.
 """
 
-from .PYzza import *
+from PYzza.pYzza import *
