@@ -179,7 +179,7 @@ def console_width() -> int:
     from shutil import get_terminal_size
     try:
         return get_terminal_size().columns
-    except:
+    except OSError:
         return 80
 
 
@@ -260,3 +260,46 @@ def get_message(key: str, lang: str = "en", lang_dict: dict = None, **kwargs) ->
         return text_template.format(**kwargs)
     except KeyError as e:
         return f"\033[31mError: Missing value for placeholder {e.args[0]} in message '{key}'\033[0m"
+
+
+def setcreate_wd(path, verbose=True):
+    """
+    Creates recursive directories prior to change of working directory.
+    :param path: Path-string for desired working directory.
+    :param verbose: If True, console hints will be printed.
+    """
+    from os.path import abspath, isdir
+    from os import makedirs, chdir, getcwd
+    from datetime import datetime
+
+    path = abspath(path)
+
+    if not isdir(path):
+        makedirs(path, exist_ok=True)
+        chdir(path)
+        if verbose:
+            print(f"\n{datetime.now()}: '{path}' created and set as working directory")
+    else:
+        if getcwd() != path:
+            chdir(path)
+            if verbose:
+                print(f"\n{datetime.now()}: '{path}' set as working directory")
+
+
+def get_exe_path() -> str:
+    """
+    Returns the path of the .exe which is used to start the program. If in virtual environment, working directory is returned.
+    :return: A path string
+    """
+    import sys
+    from os import getcwd
+    from os.path import abspath, dirname
+
+    if getattr(sys, 'frozen', False):
+        application_path = dirname(sys.executable)
+    else:
+        try:
+            application_path = dirname(abspath(__file__))
+        except NameError:
+            application_path = getcwd()
+    return application_path
