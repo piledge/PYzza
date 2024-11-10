@@ -177,9 +177,10 @@ def console_width() -> int:
     :return: e.g. 80.
     """
     from shutil import get_terminal_size
-    terminal_size = get_terminal_size()
-
-    return terminal_size.columns
+    try:
+        return get_terminal_size().columns
+    except:
+        return 80
 
 
 def print_separator(sep_char: str = '-') -> None:
