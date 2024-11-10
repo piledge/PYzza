@@ -301,5 +301,5 @@ def get_exe_path() -> str:
         try:
             application_path = dirname(abspath(__file__))
         except NameError:
-            application_path = getcwd()
+            application_path = __file__
     return application_path
