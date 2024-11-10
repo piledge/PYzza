@@ -288,7 +288,7 @@ def setcreate_wd(path, verbose=True):
 
 def get_exe_path() -> str:
     """
-    Returns the path of the .exe which is used to start the program. If in virtual environment, working directory is returned.
+    Returns the path of which the program was started.
     :return: A path string
     """
     import sys
@@ -301,5 +301,5 @@ def get_exe_path() -> str:
         try:
             application_path = dirname(abspath(__file__))
         except NameError:
-            application_path = __file__
+            application_path = __main_
     return application_path
