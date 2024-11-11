@@ -295,7 +295,7 @@ def get_exe_path() -> str:
     from os.path import abspath, dirname, realpath
 
     if getattr(sys, 'frozen', False):
-        application_path = dirname(sys.executable)
+        application_path = dirname(abspath(argv[0]))
         print('exe')
     else:
         try:
@@ -304,4 +304,27 @@ def get_exe_path() -> str:
             application_path = dirname(realpath(__main__.__file__))
         except AttributeError:
             application_path = abspath('')
+    return application_path
+
+
+def get_exe_path2() -> str:
+    """
+    Returns the path from which the program was started.
+    :return: A path string to the .exe-file or .py-file
+    """
+    import sys
+    import os
+
+    if getattr(sys, 'frozen', False):
+        # Das Programm wurde in eine ausführbare Datei kompiliert
+        application_path = os.path.dirname(sys.executable)
+        print('exe')
+    else:
+        # Das Programm wird als Skript ausgeführt
+        try:
+            application_path = os.path.dirname(os.path.abspath(__file__))
+            print('py')
+        except NameError:
+            # Fallback, falls __file__ nicht verfügbar ist
+            application_path = os.path.abspath('')
     return application_path
