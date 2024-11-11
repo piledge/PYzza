@@ -292,13 +292,14 @@ def get_exe_path() -> str:
     :return: A path string to the .exe-file or .py-file
     """
     import sys
-    from os.path import abspath, dirname
+    from os.path import abspath, dirname, realpath
 
     if getattr(sys, 'frozen', False):
         application_path = dirname(sys.executable)
     else:
         try:
-            application_path = dirname(abspath(__file__))
-        except NameError:
-            application_path = dirname(abspath(sys.argv[0]))
+            import __main__
+            application_path = dirname(realpath(__main__.__file__))
+        except AttributeError:
+            application_path = abspath('')
     return application_path
