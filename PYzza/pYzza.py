@@ -286,45 +286,13 @@ def setcreate_wd(path, verbose=True):
                 print(f"\n{datetime.now()}: '{path}' set as working directory")
 
 
+
 def get_exe_path() -> str:
-    """
-    Returns the path of which the program was started.
-    :return: A path string to the .exe-file or .py-file
-    """
-    import sys
-    from os.path import abspath, dirname, realpath
-
-    if getattr(sys, 'frozen', False):
-        application_path = dirname(abspath(argv[0]))
-        print('exe')
-    else:
-        try:
-            print('py')
-            import __main__
-            application_path = dirname(realpath(__main__.__file__))
-        except AttributeError:
-            application_path = abspath('')
-    return application_path
-
-
-def get_exe_path2() -> str:
     """
     Returns the path from which the program was started.
     :return: A path string to the .exe-file or .py-file
     """
-    import sys
-    import os
+    from sys import argv
+    from os.path import abspath, dirname
 
-    if getattr(sys, 'frozen', False):
-        # Das Programm wurde in eine ausführbare Datei kompiliert
-        application_path = os.path.dirname(sys.executable)
-        print('exe')
-    else:
-        # Das Programm wird als Skript ausgeführt
-        try:
-            application_path = os.path.dirname(os.path.abspath(__file__))
-            print('py')
-        except NameError:
-            # Fallback, falls __file__ nicht verfügbar ist
-            application_path = os.path.abspath('')
-    return application_path
+    return dirname(abspath(argv[0]))
