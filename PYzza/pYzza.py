@@ -296,8 +296,10 @@ def get_exe_path() -> str:
 
     if getattr(sys, 'frozen', False):
         application_path = dirname(sys.executable)
+        print('exe')
     else:
         try:
+            print('py')
             import __main__
             application_path = dirname(realpath(__main__.__file__))
         except AttributeError:
