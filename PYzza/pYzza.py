@@ -289,10 +289,9 @@ def setcreate_wd(path, verbose=True):
 def get_exe_path() -> str:
     """
     Returns the path of which the program was started.
-    :return: A path string
+    :return: A path string to the .exe-file or .py-file
     """
     import sys
-    from os import getcwd
     from os.path import abspath, dirname
 
     if getattr(sys, 'frozen', False):
@@ -301,5 +300,5 @@ def get_exe_path() -> str:
         try:
             application_path = dirname(abspath(__file__))
         except NameError:
-            application_path = __main_
+            application_path = dirname(abspath(sys.argv[0]))
     return application_path
